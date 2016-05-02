@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 30, 2016 12:05:47 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="org.generate.Posts" table="posts" catalog="blog" optimistic-lock="version">
+        <id name="postUuid" type="integer">
+            <column name="post_uuid" length="50" />
+            <generator class="increment" />
+        </id>
+        <property name="title" type="string">
+            <column name="title" length="65535" not-null="true" />
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="65535" />
+        </property>
+        <property name="publishingDate" type="date">
+            <column name="publishing_date" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>
